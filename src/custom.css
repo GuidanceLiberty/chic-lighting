@@ -1,0 +1,23 @@
+.text-custom-orange {
+  color: #ff8901;
+}
+
+.hover-bg-custom-orange:hover {
+  background-color: #ff8901;
+  color: white;
+}
+
+.hover-text-white:hover {
+  color: white;
+}
+
+.btn-custom-outline-orange {
+  border: 2px solid #ff8901;
+  color: #ff8901;
+  transition: all 0.2s ease-in-out;
+}
+
+.btn-custom-outline-orange:hover {
+  background-color: #ff8901;
+  color: white;
+}

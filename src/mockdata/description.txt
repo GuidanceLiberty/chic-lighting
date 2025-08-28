@@ -1,0 +1,13 @@
+Chic Lighting & Design — Project Description
+
+This Single Page Application (SPA) demonstrates a responsive, cross‑browser retail website
+for an online lighting store. It includes: header with logo, navigation menu with hover/click
+effects, visitor counter, product catalog with images/spec/price, LED lights
+section, offers, gallery with lightbox, feedback form, About/FAQ/Contact, site map, and a
+continuous scrolling ticker displaying current date, time and geolocation coordinates.
+
+Tech: HTML5, CSS, JavaScript (React), JSON for data storage (products, Tabs, offers).
+No backend is required; all data is loaded from static JSON files.
+
+Usage: Open with a dev server (Vite). The 'Download' section lets you export this description
+as .DOC or .TXT. To create a PDF, use your browser's Print to PDF.

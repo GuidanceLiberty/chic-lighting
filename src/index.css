@@ -1,0 +1,243 @@
+:root {
+  /* Brand orange */
+  --brand-orange: #f28b21; /* tweak if needed */
+}
+
+/* Glow effect for light icon */
+.glowing-light {
+  color: #facc15; /* warm yellow */
+  filter: drop-shadow(0 0 6px #facc15) drop-shadow(0 0 12px #fbbf24);
+  animation: glow 1.5s infinite alternate;
+}
+
+@keyframes glow {
+  from {
+    filter: drop-shadow(0 0 6px #facc15) drop-shadow(0 0 12px #fbbf24);
+  }
+  to {
+    filter: drop-shadow(0 0 10px #fde047) drop-shadow(0 0 20px #fcd34d);
+  }
+}
+
+/* Logo text */
+.logo-orange {
+  color: var(--brand-orange);
+  font-weight: 800;
+}
+
+/* Navbar */
+.navbar-custom {
+  background: #fff;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.06);
+}
+
+.brand {
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+}
+
+/* Nav links */
+.navbar-custom .nav-link {
+  color: #000 !important; /* black text */
+  font-weight: 500;
+}
+
+.navbar-custom .nav-link:hover {
+  color: var(--brand-orange) !important;
+}
+
+/* Right-side icons */
+.nav-icons {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.icon-btn {
+  width: 38px;
+  height: 38px;
+  border-radius: 999px;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  background: #fff;
+  display: grid;
+  place-items: center;
+  line-height: 0;
+}
+
+.icon-btn:hover {
+  background: var(--brand-orange);
+  color: #fff;
+  border-color: var(--brand-orange);
+}
+
+.navbar-toggler-custom {
+  border-radius: 10px;
+}
+
+/* Desktop links visible only >= md */
+@media (min-width: 768px) {
+  .nav-links-desktop {
+    display: flex !important;
+    gap: 1rem;
+  }
+}
+@media (max-width: 767.98px) {
+  .nav-links-desktop {
+    display: none !important;
+  }
+}
+
+/* --- Custom mobile dropdown --- */
+.rm-overlay {
+  position: fixed;
+  inset: 0;
+  background: #000;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease;
+  z-index: 1040;
+}
+.rm-overlay.show {
+  opacity: 0.4;
+  pointer-events: auto;
+}
+
+.rm-card {
+  position: fixed;
+  top: 68px; /* sit just under the navbar */
+  left: 50%;
+  transform: translateX(-50%) translateY(-12px);
+  width: min(92vw, 420px); /* centered floating box */
+  background: rgba(242, 139, 33, 0.9); /* transparent brand orange */
+  color: #fff;
+  border-radius: 22px;
+  padding: 24px 16px;
+  box-shadow: 0 14px 36px rgba(0, 0, 0, 0.22);
+  opacity: 0;
+  pointer-events: none;
+  transition: transform 0.25s ease, opacity 0.25s ease;
+  z-index: 1050;
+}
+.rm-card.show {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+  pointer-events: auto;
+}
+
+/* Mobile nav links */
+.rm-item + .rm-item {
+  margin-top: 24px; /* more vertical spacing */
+}
+
+.rm-link {
+  display: block;
+  text-align: center;
+  color: #fff; /* white text so it pops on orange */
+  text-decoration: none;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px; /* more spacing between letters */
+  font-size: 1.1rem;   /* slightly larger */
+}
+.rm-link:hover {
+  color: #ffe9d6; /* softer hover for contrast */
+}
+
+/* Hero section */
+.hero-section {
+  position: relative;
+}
+
+.hero-img {
+  max-width: 700px;
+  width: 100%;
+  height: auto;
+}
+
+/* Buttons override Bootstrap */
+.btn-primary {
+  background-color: var(--brand-orange) !important;
+  border-color: var(--brand-orange) !important;
+}
+
+.btn-primary:hover,
+.btn-primary:focus {
+  background-color: #d97706 !important; /* darker orange */
+  border-color: #d97706 !important;
+}
+
+.btn-outline-primary {
+  color: var(--brand-orange) !important;
+  border-color: var(--brand-orange) !important;
+}
+
+.btn-outline-primary:hover,
+.btn-outline-primary:focus {
+  background-color: var(--brand-orange) !important;
+  color: #fff !important;
+  border-color: var(--brand-orange) !important;
+}
+
+/* Heading orange word */
+.text-primary {
+  color: var(--brand-orange) !important;
+}
+
+.text-life {
+  color: var(--brand-orange);
+  font-weight: 800;
+}
+
+
+/* Glow effect for icons */
+.glow-icon {
+  filter: drop-shadow(0 0 6px #facc15) drop-shadow(0 0 12px #fbbf24);
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.custom-hover:hover .glow-icon {
+  transform: scale(1.1);
+  filter: drop-shadow(0 0 10px #facc15) drop-shadow(0 0 20px #fbbf24);
+}
+
+/* Card hover effect */
+.custom-hover:hover {
+  background: #fffbea; /* soft warm background */
+  box-shadow: 0 0 25px rgba(250, 200, 50, 0.4);
+  transition: all 0.3s ease;
+}
+
+
+/* Ticker wrapper */
+.ticker {
+  position: relative;
+  overflow: hidden;
+  background: #f28b21; /* brand orange */
+  color: #fff;
+  font-weight: 500;
+  white-space: nowrap;
+  padding: 6px 0;
+}
+
+/* Inner scroll container */
+.ticker-inner {
+  display: flex;
+  width: max-content;
+  animation: ticker-scroll 20s linear infinite;
+}
+
+/* Duplicate text so it loops seamlessly */
+.ticker-item {
+  padding: 0 2rem;
+}
+
+/* Scroll animation */
+@keyframes ticker-scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
