@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { NavbarMenu } from "../mockdata/data";
 import { CiSearch } from "react-icons/ci";
-import { FaLightbulb } from "react-icons/fa"; // ✅ light bulb instead of dumbbell
+import { FaLightbulb } from "react-icons/fa";
 import { MdMenu } from "react-icons/md";
 import { PiShoppingCartThin } from "react-icons/pi";
 import ResponsiveMenu from "./ResponsiveMenu";
@@ -15,14 +15,13 @@ const Navbar = () => {
       <div className="container d-flex align-items-center justify-content-between py-3">
         {/* LOGO */}
         <a href="/" className="navbar-brand d-flex align-items-center brand m-0">
-          {/* ✅ Lightbulb Icon with glow */}
           <FaLightbulb className="me-2 fs-4 glowing-light" />
           <span className="text-dark">CHIC</span>
           <span className="ms-1 logo-orange">LiGHTING</span>
         </a>
 
-        {/* DESKTOP LINKS ONLY */}
-        <ul className="nav nav-pills nav-links-desktop ms-auto me-3">
+        {/* NAV LINKS - hidden on mobile */}
+        <ul className="nav nav-pills ms-auto me-3 d-none d-md-flex">
           {NavbarMenu.map((item) => (
             <li className="nav-item" key={item.id}>
               <a href={item.link} className="nav-link px-2 text-dark">
@@ -32,8 +31,8 @@ const Navbar = () => {
           ))}
         </ul>
 
-        {/* ICONS + COUNTER + HAMBURGER */}
-        <div className="nav-icons d-flex align-items-center gap-2">
+        {/* ICONS + LOGIN + HAMBURGER */}
+        <div className="d-flex align-items-center gap-2">
           <button className="icon-btn" aria-label="Search">
             <CiSearch size={20} />
           </button>
@@ -41,7 +40,6 @@ const Navbar = () => {
             <PiShoppingCartThin size={20} />
           </button>
 
-          {/* ✅ Visitor Counter */}
           <VisitorCounter />
 
           {/* Desktop Login */}
@@ -54,16 +52,16 @@ const Navbar = () => {
 
           {/* Mobile Hamburger */}
           <button
-            className="icon-btn navbar-toggler-custom d-md-none"
+            className="icon-btn d-md-none"
             aria-label="Menu"
-            onClick={() => setOpen((v) => !v)}
+            onClick={() => setOpen((prev) => !prev)}
           >
-            <MdMenu size={20} />
+            <MdMenu size={22} />
           </button>
         </div>
       </div>
 
-      {/* Mobile dropdown */}
+      {/* Mobile Dropdown Menu */}
       <ResponsiveMenu open={open} setOpen={setOpen} />
     </nav>
   );
