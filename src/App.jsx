@@ -14,7 +14,6 @@ import Equipments from './componenents/Equipments'
 import About from './componenents/About'
 import FAQ from './componenents/FAQ'
 import Contact from './componenents/Contact'
-import SiteMap from './componenents/SiteMap'
 import Feedback from './componenents/Feedback'
 import DownloadDescription from './componenents/DownloadDescription'
 import Ticker from './componenents/Ticker'
@@ -56,7 +55,6 @@ function App() {
       <About />
       <FAQ />
       <Contact />
-      <SiteMap />
       <Feedback />
       <DownloadDescription />
       <Footer />
